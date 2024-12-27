@@ -12,7 +12,8 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Routes
 app.get("/", (req, res) => {
-  res.render("index", { title: "Home" });
+  res.send("API is working fine !")
+  // res.render("index", { title: "Home" });
 });
 
 app.get("/about", (req, res) => {
