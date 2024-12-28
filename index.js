@@ -19,6 +19,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/contact", (req, res) => {
+  res.send("Hello from /contact")
   res.render("contact", { title: "Contact" });
 });
 
