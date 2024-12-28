@@ -21,6 +21,11 @@ app.get("/contact", (req, res) => {
   res.render("contact", { title: "Contact" });
 });
 
+app.get("/about", (req, res) => {
+  res.render("index", { title: "About" });
+});
+
+
 // Route to handle form submission
 app.post('/contact', async (req, res) => {
     const { full_name, email, phone_number, feedback } = req.body;
