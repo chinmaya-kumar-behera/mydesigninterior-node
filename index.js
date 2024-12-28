@@ -19,43 +19,43 @@ app.get("/", (req, res) => {
 });
 
 app.get("/contact", (req, res) => {
-  res.send("Hello from /contact")
-  // res.render("contact", { title: "Contact" });
+  // res.send("Hello from /contact")
+  res.render("contact", { title: "Contact" });
 });
 
 // Route to handle form submission
-app.post('/contact', async (req, res) => {
-    const { full_name, email, phone_number, feedback } = req.body;
+// app.post('/contact', async (req, res) => {
+//     const { full_name, email, phone_number, feedback } = req.body;
 
-    // Nodemailer configuration
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: process.env.EMAIL, // Your email address
-            pass: process.env.PASSWORD, // Your email password or app-specific password
-        },
-    });
+//     // Nodemailer configuration
+//     const transporter = nodemailer.createTransport({
+//         service: 'gmail',
+//         auth: {
+//             user: process.env.EMAIL, // Your email address
+//             pass: process.env.PASSWORD, // Your email password or app-specific password
+//         },
+//     });
 
-    const mailOptions = {
-        from: email, // Sender email
-        to: 'web.chinu2127@gmail.com', // Replace with your email
-        subject: 'New Contact Form Submission',
-        text: `
-            Full Name: ${full_name}
-            Email: ${email}
-            Phone Number: ${phone_number}
-            Feedback: ${feedback}
-        `,
-    };
+//     const mailOptions = {
+//         from: email, // Sender email
+//         to: 'web.chinu2127@gmail.com', // Replace with your email
+//         subject: 'New Contact Form Submission',
+//         text: `
+//             Full Name: ${full_name}
+//             Email: ${email}
+//             Phone Number: ${phone_number}
+//             Feedback: ${feedback}
+//         `,
+//     };
 
-    try {
-        await transporter.sendMail(mailOptions);
-        res.send('<h1>Message sent successfully!</h1>');
-    } catch (error) {
-        console.error(error);
-        res.send('<h1>Failed to send message. Please try again.</h1>');
-    }
-});
+//     try {
+//         await transporter.sendMail(mailOptions);
+//         res.send('<h1>Message sent successfully!</h1>');
+//     } catch (error) {
+//         console.error(error);
+//         res.send('<h1>Failed to send message. Please try again.</h1>');
+//     }
+// });
 
 // Start the server
 app.listen(PORT, () => {
