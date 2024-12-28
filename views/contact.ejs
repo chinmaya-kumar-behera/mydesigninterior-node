@@ -1,6 +1,30 @@
-<!-- <%- include("partials/header.ejs") %> -->
-<main>
-  <h2>Contact Me</h2>
-  <p>Reach out via the form below.</p>
-</main>
-<%- include("partials/footer.ejs") %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - My Interiors</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <!-- FontAwesome CDN -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+
+    <!-- intro section -->
+    <%- include("partials/header.ejs") %>
+    
+    <!-- contact form -->
+    <%- include("components/contact/contactForm.ejs") %>
+
+    <!-- Footer section -->
+    <%- include("partials/footer.ejs") %>
+    
+    <script src="js/script.js"></script>
+  </body>
+</html>

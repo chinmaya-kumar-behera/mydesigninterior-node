@@ -1,22 +1,400 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= title %></title>
-</head>
-<body>
-  <header>
-    <h1>Welcome to My Portfolio</h1>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/contact">Contact</a>
-    </nav>
-  </header>
-  <main>
-    <h2>Home Page</h2>
-    <p>This is the homepage of my portfolio.</p>
-  </main>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - My Interiors</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <!-- FontAwesome CDN -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+
+    <!-- intro section -->
+    <%- include("partials/header.ejs") %>
+
+    <!-- about section -->
+    <section class="py-5 md:py-8 lg:py-10 px-2 lg:px-0">
+      <div class="max-w-6xl mx-auto py-5 md:py-8 lg:py-10">
+        <div class="flex flex-col md:flex-row gap-10 md:gap-5">
+          <div class="w-full md:w-1/2">
+            <%- include('components/sectionHeading', { text: 'About us' }) %>
+
+            <div class="mt-5 lg:mt-10">
+              <p class="text-[17px] font-normal mt-2">
+                At My Design, we offer a comprehensive range of interior
+                solutions tailored to bring your dream spaces to life. By
+                combining the latest innovative trends with elegant styling, we
+                create interiors that not only complement your lifestyle but
+                also maximize storage— because we understand that space is as
+                precious as diamonds, especially with rising real estate costs.
+              </p>
+              <p class="text-[17px] mt-2">
+                Our designs prioritize ergonomic functionality, ensuring that
+                everything you need is always within reach. Your interior will
+                reflect a seamless blend of creativity, practicality, and a deep
+                understanding of your vision.
+              </p>
+            </div>
+
+            <div class="mt-10 md:mt-14">
+              <div
+                class="flex flex-col md:flex-row gap-6 items-center justify-center"
+              >
+                <div class="flex flex-col items-center">
+                  <h4 class="text-xl font-bold">10+</h4>
+                  <span class="text-md">Years of Experience</span>
+                </div>
+                <div class="flex flex-col items-center">
+                  <h4 class="text-xl font-bold">300+</h4>
+                  <span class="text-md">Projects completed</span>
+                </div>
+                <div class="flex flex-col items-center">
+                  <h4 class="text-xl font-bold">250+</h4>
+                  <span class="text-md">Happy clients</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Gallery Section -->
+          <section class="w-full md:w-1/2">
+            <div class="p-2 lg:p-5 space-y-3">
+              <div class="flex items-end gap-3">
+                <!-- Gallery Item 1 -->
+                <div
+                  class="w-1/2 h-[130px] rounded-lg overflow-hidden shadow-lg"
+                >
+                  <img
+                    src="https://images.pexels.com/photos/920382/pexels-photo-920382.jpeg?cs=srgb&dl=pexels-olly-920382.jpg&fm=jpg"
+                    alt="Gallery Image 1"
+                    class="w-full h-full object-cover object-center"
+                  />
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div
+                  class="w-1/2 h-[180px] bg-gray-200 rounded-lg overflow-hidden shadow-lg"
+                >
+                  <img
+                    src="https://cdn.pixabay.com/photo/2019/05/16/20/15/online-4208112_1280.jpg"
+                    alt="Gallery Image 2"
+                    class="w-full h-full object-cover object-center"
+                  />
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <!-- Gallery Item 1 -->
+                <div
+                  class="w-[65%] h-[135px] rounded-lg overflow-hidden shadow-lg"
+                >
+                  <img
+                    src="https://media.istockphoto.com/id/1357529184/photo/3d-render-of-a-contemporary-living-room-interior.jpg?s=612x612&w=0&k=20&c=YuMefC7wfoc6Qitx7iyjmnjFBdtb94CyuITVCDrHTB8="
+                    alt="Gallery Image 1"
+                    class="w-full h-full object-cover object-center"
+                  />
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div
+                  class="w-[35%] h-[250px] bg-gray-200 rounded-lg overflow-hidden shadow-lg"
+                >
+                  <img
+                    src="https://cdn.pixabay.com/photo/2024/03/26/18/56/interior-design-8657614_640.png"
+                    alt="Gallery Image 2"
+                    class="w-full h-full object-cover object-center"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- What sets Us Apart section -->
+    <section class="pt-10 md:pt-20 pb-14 md:pb-28 bg-[#fff5e4] px-2 lg:px-0">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col-reverse md:flex-row gap-10 md:gap-0">
+          <div class="relative w-full md:w-1/2 h-[300px] md:h-[550px]">
+            <div
+              class="absolute w-[300px] md:w-[550px] h-[300px] md:h-[550px] top-0 right-10 md:right-5 bg-[#ffec5c] rounded-full"
+            ></div>
+            <div
+              class="absolute w-[300px] md:w-[550px] h-[300px] md:h-[550px] top-5 md:top-12 right-10 md:right-5 bg-black rounded-full overflow-hidden"
+            >
+              <div class="h-full w-full rounded-full">
+                <img
+                  src="https://amazingarchitecture.com/storage/files/1/Articles/house/cozy_living_room.jpg"
+                  alt="Gallery Image 1"
+                  class="w-full h-full object-cover object-center"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full md:w-1/2">
+            <%- include('components/sectionHeading', { text: 'What Sets Us Apart' }) %>
+
+            <div class="space-y-3 mt-10 lg:mt-5">
+              <!-- card 1 -->
+              <div class="p-3 flex gap-3 md:gap-5 rounded-xl bg-white">
+                <div
+                  class="min-w-14 md:min-w-20 h-14 md:h-20 bg-[#fff5e4] rounded-xl"
+                ></div>
+                <div class="space-y-1">
+                  <h4 class="text-lg md:text-xl font-bold">
+                    Comprehensive Interior Solutions
+                  </h4>
+                  <p>
+                    A one-stop destination offering a complete range of interior
+                    solutions for residential and commercial spaces
+                  </p>
+                </div>
+              </div>
+
+              <!-- card 2 -->
+              <div class="p-3 flex gap-3 md:gap-5 rounded-xl bg-white">
+                <div
+                  class="min-w-14 md:min-w-20 h-14 md:h-20 bg-[#fff5e4] rounded-xl"
+                ></div>
+                <div class="space-y-1">
+                  <h4 class="text-lg md:text-xl font-bold">
+                    Ergonomic and Practical Designs
+                  </h4>
+                  <p>
+                    Interiors designed with ergonomic layouts, ensuring
+                    everything is perfectly placed for ease of access
+                  </p>
+                </div>
+              </div>
+
+              <!-- card 3 -->
+              <div class="p-3 flex gap-3 md:gap-5 rounded-xl bg-white">
+                <div
+                  class="min-w-14 md:min-w-20 h-14 md:h-20 bg-[#fff5e4] rounded-xl"
+                ></div>
+                <div class="space-y-1">
+                  <h4 class="text-lg md:text-xl font-bold">
+                    Experienced Professionals
+                  </h4>
+                  <p>
+                    A team of skilled designers and technicians bringing
+                    expertise, creativity, and innovation to every project
+                  </p>
+                </div>
+              </div>
+
+              <!-- card 4 -->
+              <div class="p-3 flex gap-3 md:gap-5 rounded-xl bg-white">
+                <div
+                  class="min-w-14 md:min-w-20 h-14 md:h-20 bg-[#fff5e4] rounded-xl"
+                ></div>
+                <div class="space-y-1">
+                  <h4 class="text-lg md:text-xl font-bold">
+                    End to End Services
+                  </h4>
+                  <p>
+                    Offering a seamless experience from design conception to
+                    final execution, ensuring quality at every stage
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What we offer section -->
+    <section class="max-w-7xl mx-auto py-10 lg:py-20 px-2 lg:px-0">
+      <div class="">
+        <%- include('components/sectionHeading', { text: 'What We Offer' }) %>
+      </div>
+      <div class="mt-5">
+        <p class="text-lg">
+          At My Design Interiors and Construction, we specialize in transforming
+          spaces into personalized works of art. Our expert team crafts tailored
+          interior design solutions that blend creativity, functionality, and
+          your unique style to elevate every room and enhance your living
+          experience.
+        </p>
+        <div class="mt-5">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Offer Item 1 -->
+            <div
+              class="rounded-lg overflow-hidden shadow-lg hover:shadow-xl p-5"
+            >
+              <img
+                src="https://amazingarchitecture.com/storage/files/1/Articles/house/cozy_living_room.jpg"
+                alt="Gallery Image 1"
+                class="w-full h-[200px] object-cover rounded-lg"
+              />
+              <div class="mt-3 text-center space-y-2 md:space-y-3">
+                <h4 class="text-lg md:text-xl font-bold text-[#fe9901]">
+                  Modular kitchne & Bedroom
+                </h4>
+                <p class="text-gray-600 text-md">
+                  Designed for modern living, our modular kitchens and bedrooms
+                  offer smart, space-saving solutions with style
+                </p>
+                <button
+                  class="px-4 py-2 text-md bg-[#ffe22c] text-white rounded-lg"
+                >
+                  Get in touch
+                </button>
+              </div>
+            </div>
+
+            <!-- Offer Item 2 -->
+            <div
+              class="rounded-lg overflow-hidden shadow-lg hover:shadow-xl p-5"
+            >
+              <img
+                src="https://amazingarchitecture.com/storage/files/1/Articles/house/cozy_living_room.jpg"
+                alt="Gallery Image 1"
+                class="w-full h-[200px] object-cover rounded-lg"
+              />
+              <div class="mt-3 text-center space-y-2 md:space-y-3">
+                <h4 class="text-lg md:text-xl font-bold text-[#fe9901]">
+                  House & Bathroom Renovations
+                </h4>
+                <p class="text-gray-600 text-md">
+                  Upgrade your home and bathroom with custom renovations
+                  designed to maximize comfort, style, and value.
+                </p>
+                <button
+                  class="px-4 py-2 text-md bg-[#ffe22c] text-white rounded-lg"
+                >
+                  Get in touch
+                </button>
+              </div>
+            </div>
+
+            <!-- Offer Item 3 -->
+            <div
+              class="rounded-lg overflow-hidden shadow-lg hover:shadow-xl p-5"
+            >
+              <img
+                src="https://amazingarchitecture.com/storage/files/1/Articles/house/cozy_living_room.jpg"
+                alt="Gallery Image 1"
+                class="w-full h-[200px] object-cover rounded-lg"
+              />
+              <div class="mt-3 text-center space-y-2 md:space-y-3">
+                <h4 class="text-lg md:text-xl font-bold text-[#fe9901]">
+                  Office Workstations
+                </h4>
+                <p class="text-gray-600 text-md">
+                  Maximize your workspace with sleek and functional office
+                  workstations built for modern work dynamics
+                </p>
+                <button
+                  class="px-4 py-2 text-md bg-[#ffe22c] text-white rounded-lg"
+                >
+                  Get in touch
+                </button>
+              </div>
+            </div>
+
+            <!-- Offer Item 4 -->
+            <div
+              class="rounded-lg overflow-hidden shadow-lg hover:shadow-xl p-5"
+            >
+              <img
+                src="https://amazingarchitecture.com/storage/files/1/Articles/house/cozy_living_room.jpg"
+                alt="Gallery Image 1"
+                class="w-full h-[200px] object-cover rounded-lg"
+              />
+              <div class="mt-3 text-center space-y-2 md:space-y-3">
+                <h4 class="text-lg md:text-xl font-bold text-[#fe9901]">
+                  Final Touches
+                </h4>
+                <p class="text-gray-600 text-md">
+                  Enhance your space with expert finishing that highlights every
+                  detail. Our precise craftsmanship ensures a flawless, polished
+                  look for every project
+                </p>
+                <button
+                  class="px-4 py-2 text-md bg-[#ffe22c] text-white rounded-lg"
+                >
+                  Get in touch
+                </button>
+              </div>
+            </div>
+
+            <!-- Offer Item 5 -->
+            <div
+              class="rounded-lg overflow-hidden shadow-lg hover:shadow-xl p-5"
+            >
+              <img
+                src="https://amazingarchitecture.com/storage/files/1/Articles/house/cozy_living_room.jpg"
+                alt="Gallery Image 1"
+                class="w-full h-[200px] object-cover rounded-lg"
+              />
+              <div class="mt-3 text-center space-y-2 md:space-y-3">
+                <h4 class="text-lg md:text-xl font-bold text-[#fe9901]">
+                  Constructions
+                </h4>
+                <p class="text-gray-600 text-md">
+                  Building your ideal interior with unmatched craftsmanship. Our
+                  interior construction services offer seamless design and
+                  superior quality
+                </p>
+                <button
+                  class="px-4 py-2 text-md bg-[#ffe22c] text-white rounded-lg"
+                >
+                  Get in touch
+                </button>
+              </div>
+            </div>
+
+            <!-- Offer Item 6 -->
+            <div
+              class="rounded-lg overflow-hidden shadow-lg hover:shadow-xl p-5"
+            >
+              <img
+                src="https://amazingarchitecture.com/storage/files/1/Articles/house/cozy_living_room.jpg"
+                alt="Gallery Image 1"
+                class="w-full h-[200px] object-cover rounded-lg"
+              />
+              <div class="mt-3 text-center space-y-2 md:space-y-3">
+                <h4 class="text-lg md:text-xl font-bold text-[#fe9901]">
+                  Turnkey Projects
+                </h4>
+                <p class="text-gray-600 text-md">
+                  Custom solutions tailored to bring your vision to life
+                  effortlessly, with every detail meticulously managed. From the
+                  initial design to final delivery
+                </p>
+                <button
+                  class="px-4 py-2 text-md bg-[#ffe22c] text-white rounded-lg"
+                >
+                  Get in touch
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Gallery section -->
+    <%- include("components/projectGallery.ejs") %>
+
+    <!-- Testmonials section -->
+    <%- include("components/testimonials.ejs") %>
+
+    <!-- contact form -->
+    <%- include("components/contact/contactForm.ejs") %>
+
+    <!-- Footer section -->
+    <%- include("partials/footer.ejs") %>
+    
+    <script src="js/script.js"></script>
+  </body>
 </html>
